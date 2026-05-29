@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const student={
+            firstName:"venkat",
+            lastName:"pathy",
+            Marks:[100,100,100,100,100,100],
+            calculateAveragemark:function(){
+                const totalmark=this.Marks.reduce((total,mark)=>total +mark,0);
+                return totalmark/this.Marks.length;
+            },
+            getGrade:function(){
+                const averagemark=this.calculateAveragemark();
+                if(averagemark==100){
+                    return "A++"
+                }
+                else if(averagemark==90){
+                    return "A"
+                }
+                else if(averagemark==80){
+                    return "B"
+                }
+                else if(averagemark==70){
+                    return "C"
+                }
+                else if(averagemark==60){
+                    return "D"
+                }
+                else if(averagemark==50){
+                    return "E"
+                }
+                else if(averagemark<=40){
+                    return "F"
+                }
+                else{
+                    return "sorry your in one subject Fail"
+                }
+                // else {
+                //     return "Sorry your fail"
+                // }
+            },
+            displayInfo:function(){
+                console.log('Student:',this.firstName,this.lastName);
+                console.log('Average Score:',this.calculateAveragemark().toFixed(2));
+                console.log('Grade:',this.getGrade());
+            },
+        };
+        student.displayInfo()
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>
